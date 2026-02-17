@@ -1,0 +1,10 @@
+#Team Name : Future Flux
+
+def average_passing_grades(grades: list[int]) -> float:
+    total = 0
+    count = 0
+    for g in grades:
+        if g >= 50:
+            total += g
+            count += 1
+    return total / count if count else 0.0
