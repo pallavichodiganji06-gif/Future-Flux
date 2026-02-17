@@ -1,0 +1,37 @@
+#Team Name : Future Flux
+
+
+def calculate(expression: str) -> float:
+    tokens = []
+    num = ""
+
+    for ch in expression.replace(" ", ""):
+        if ch.isdigit() or ch == ".":
+            num += ch
+        else:
+            tokens.append(float(num))
+            tokens.append(ch)
+            num = ""
+    tokens.append(float(num))
+
+    i = 0
+    while i < len(tokens):
+        if tokens[i] == "*":
+            tokens[i - 1] *= tokens[i + 1]
+            del tokens[i:i + 2]
+        elif tokens[i] == "/":
+            tokens[i - 1] /= tokens[i + 1]
+            del tokens[i:i + 2]
+        else:
+            i += 1
+
+    result = tokens[0]
+    i = 1
+    while i < len(tokens):
+        if tokens[i] == "+":
+            result += tokens[i + 1]
+        elif tokens[i] == "-":
+            result -= tokens[i + 1]
+        i += 2
+
+    return round(result, 2)
