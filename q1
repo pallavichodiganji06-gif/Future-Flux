@@ -1,10 +1,7 @@
- def calculate_total_bill(amount: float, tip_percent: int) -> float:
+# Team Name:Future Flux 
+
+def calculate_total_bill(amount: float, tip_percent: int) -> float:
     amount = float(amount)
     tip_percent = float(tip_percent)
     total = amount + (amount * tip_percent / 100)
     return round(total, 2)
-print(calculate_total_bill(100.0, 15))  
-print(calculate_total_bill(55.50, 20))   
-print(calculate_total_bill(200, 0))      
-print(calculate_total_bill(12.99, 10))   
-print(calculate_total_bill(0, 15))  
