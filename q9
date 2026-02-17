@@ -1,0 +1,9 @@
+#Team Name : Future Flux
+
+def generate_threes(start: int, end: int) -> list[int]:
+    result = []
+    i = start
+    while i < end:
+        result.append(i)
+        i += 3
+    return result
